@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(){
+	long number = 0;
+	int biggestChainLength = 0;
+	long startingNumber = 14;
+	for(int i = 14; i < 1000000; i++){
+		number = i;
+		int chainLength = 1;
+		while(number != 1){
+			if(number % 2 == 0){
+				number = number / 2;
+			}
+			else{
+				number = 3*number + 1;
+			}
+			chainLength++;
+		}
+		if(chainLength > biggestChainLength){
+			biggestChainLength = chainLength;
+			startingNumber = i;
+		}
+	}
+
+	printf("The biggest chain, of length %d, starts with %ld\n", biggestChainLength, startingNumber);
+	return 0;
+}
