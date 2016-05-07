@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+short isPrime(long factor){
+	double factorRoot = (sqrt(factor));
+
+	for(long i = 2; i <= factorRoot; i++){
+		if(factor % i == 0){
+			return 0;
+		}
+	}
+	return 1;
+}
+
+int main(){
+	long sum = 0;
+	for(int i = 2; i < 2000000; i++){
+		if(isPrime(i) == 1){
+			sum += i;
+		}
+	}
+	printf("Sum of all the primes below two millions: %ld", sum);
+	return 0;
+}
