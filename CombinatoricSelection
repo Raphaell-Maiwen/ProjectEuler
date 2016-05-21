@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+long double factorial(int number){
+	long double result = 1;
+	if(number != 0){
+		for(int i = number; i > 1; i--){
+			result *= i;
+		}
+		return result;
+	}
+	else{
+		return 1;
+	}
+}
+
+int main(){
+	int values = 0;
+	long double C = 0;
+
+	for(int n = 23; n <= 100; n++){
+		for(int r = n; r >= 0; r--){
+			C = factorial(n)/(factorial(r) * factorial(n-r));
+			if(C > 1000000){
+				values++;
+			}
+		}
+	}
+
+	printf("Values of nCr greater than one-million: %d", values);
+	return 0;
+}
