@@ -21,7 +21,7 @@ int main(){
 	long largestPrime = 0;
 	printf("Test1\n");
 	
-	for(long i = 2; i < root; i++){
+	for(long i = 2; i <= root; i++){
 		if(number % i == 0){
 			long otherFactor = number / i;
 			if(otherFactor > i && otherFactor > largestPrime && isPrime(otherFactor) == 1){
